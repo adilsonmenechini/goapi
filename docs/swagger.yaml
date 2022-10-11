@@ -1,0 +1,97 @@
+definitions:
+  presenter.UserRequest:
+    properties:
+      email:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /api/user/:
+    get:
+      consumes:
+      - application/json
+      description: get string Alls user
+      produces:
+      - application/json
+      responses: {}
+      summary: Alls user
+      tags:
+      - user
+    post:
+      consumes:
+      - application/json
+      description: get string creater user
+      parameters:
+      - description: Creater user
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/presenter.UserRequest'
+      produces:
+      - application/json
+      responses: {}
+      summary: Creater user
+      tags:
+      - user
+  /api/user/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: get string Delete user
+      parameters:
+      - description: Delete user
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: Delete user
+      tags:
+      - user
+    get:
+      consumes:
+      - application/json
+      description: get string Get user
+      parameters:
+      - description: Get user
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: Get user
+      tags:
+      - user
+    put:
+      consumes:
+      - application/json
+      description: get string Update user
+      parameters:
+      - description: Update user
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/presenter.UserRequest'
+      - description: Update user
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      summary: Update user
+      tags:
+      - user
+swagger: "2.0"
